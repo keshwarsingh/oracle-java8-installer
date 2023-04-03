@@ -1,0 +1,5 @@
+oracle-java8-installer (8.361.1) bionic; urgency=low
+
+  * New upstream release with lots of bug fixes and feature improvements.
+
+-- keshwarsingh  Mon, 03 Mar 2023 11:12:00 +0400

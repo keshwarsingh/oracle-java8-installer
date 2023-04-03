@@ -1,0 +1,71 @@
+#!/bin/sh
+
+set -e
+
+. /usr/share/debconf/confmodule
+
+
+### Variables
+VER='0.7'
+
+# Folders
+J_INSTALL_DIR=/usr/lib/jvm/java-8-oracle/jre/lib/security
+OLDDIR=/usr/lib/oracle-jdk8-installer-unpackdir
+NEWDIR=/var/cache/oracle-jdk8-installer
+
+SHA256SUM_TGZ="9c64997edfce44e29296bfbd0cf90abf8b6b9ef2ea64733adae3bdac9ae2c5a6"
+J_DIR=UnlimitedJCEPolicyJDK8
+FILENAME=jce_policy-8.zip
+
+
+### Functions
+fp_exit_with_error() {
+	echo $1
+	echo "Unlimited JCE Policy for Oracle Java 8."
+	db_fset oracle-java8-unlimited-jce-policy/local seen false
+	exit 1
+}
+
+unpack() {
+	cd /var/cache/oracle-jdk8-installer
+
+	db_get oracle-java8-unlimited-jce-policy/local
+	if [ -f $FILENAME ]; then
+		echo "Installing from local file $FILENAME"
+	else # no local file
+		echo "$FILENAME: No such file or directory" 
+	fi # end if local file
+
+	# Removing outdated cached downloads
+	echo "Removing outdated cached downloads..."
+	rm -vrf $J_DIR
+
+	# Verify SHA256 checksum of (copied or downloaded) tarball
+        echo "$SHA256SUM_TGZ  $FILENAME" | sha256sum -c > /dev/null 2>&1 \
+		|| fp_exit_with_error "sha256sum mismatch $FILENAME"
+
+	# Unpacking and checking the plugin
+	unzip $FILENAME || fp_exit_with_error "Cannot unpack Unlimited JCE Policy for Oracle Java 8"
+}
+
+### Main
+
+# Create dirs
+mkdir -p /var/cache/oracle-jdk8-installer /usr/lib/jvm /usr/lib/oracle-jdk8-installer-unpackdir
+
+unpack
+
+# Copy it to the right dir
+if [ -e /usr/lib/jvm/java-8-oracle/jre/lib/security ]; then
+	cp -rf $NEWDIR/$J_DIR/*.jar /usr/lib/jvm/java-8-oracle/jre/lib/security/
+fi
+
+db_fset oracle-java8-unlimited-jce-policy/local seen false
+
+echo "Unlimited JCE Policy for Oracle Java 8 istalled"
+
+#DEBHELPER#
+
+exit 0
+
+# vim: ts=2 sw=2

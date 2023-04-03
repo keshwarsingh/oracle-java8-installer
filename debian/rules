@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+%:
+	dh $@
+
+# The jdk package is perfectly reproducible without
+# strip-nondeterminism; Drop the helper to prove it.
+override_dh_strip_nondeterminism:

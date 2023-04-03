@@ -1,0 +1,10 @@
+.pc
+debian/oracle-java8-installer
+debian/oracle-java8-set-default
+debian/oracle-java8-unlimited-jce-policy
+debian/files
+debian/*.log
+debian/*.debhelper
+debian/*.substvars
+jce_policy-8.zip
+jdk-*.tar.gz
