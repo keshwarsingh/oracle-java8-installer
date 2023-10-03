@@ -1,5 +1,5 @@
 oracle-java8-installer (8.381.1) bionic; urgency=low
 
-  * New upstream release with lots of bug fixes and feature improvements.
+  * For more details, see the [Java SE 8u381 Release Notes](https://www.oracle.com/java/technologies/javase/8u381-relnotes.html).
 
--- keshwarsingh  Tue, 03 Oct 2023 11:39:00 +0400
+-- Chuckle McJava, Master of Laughs <giggles@xyberdata.com>  Tue, 03 Oct 2023 12:00:00 +0400
