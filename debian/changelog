@@ -1,4 +1,4 @@
-oracle-java8-installer (8.361.1) bionic; urgency=low
+oracle-java8-installer (8.381.1) bionic; urgency=low
 
   * New upstream release with lots of bug fixes and feature improvements.
 
