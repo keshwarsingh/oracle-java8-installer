@@ -21,9 +21,9 @@ Usage
 To build the packages:
 
 - sudo apt install -y build-essential debhelper java-common
-- git clone https://github.com/***/oracle-java8-installer.git
+- git clone https://github.com/keshwarsingh/oracle-java8-installer.git
 - cd oracle-java8-installer
-- download jdk-8u361-linux-x64.tar.gz and jce_policy-8.zip
+- download jdk-8u381-linux-x64.tar.gz and jce_policy-8.zip
 - Link JDK: https://www.oracle.com/java/technologies/downloads/
 - Link JCE: https://www.oracle.com/java/technologies/javase-jce8-downloads.html
 - dpkg-buildpackage -uc -us
