@@ -28,4 +28,4 @@ To build the packages:
 - Link JCE: https://www.oracle.com/java/technologies/javase-jce8-downloads.html
 - dpkg-buildpackage -uc -us
 - install any missing packages that dpkg-buildpackage complains about
-- sudo apt-get install ./oracle-java8-installer_8.381.1_amd64.deb ./oracle-java8-unlimited-jce-policy_8.381.1_all.deb  ./oracle-java8-set-default_8.381.1_all.deb
+- sudo apt-get install ./oracle-java8-installer_8.391.1_amd64.deb ./oracle-java8-unlimited-jce-policy_8.391.1_all.deb  ./oracle-java8-set-default_8.391.1_all.deb
