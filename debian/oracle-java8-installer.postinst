@@ -10,10 +10,10 @@ VER='0.6alpha'
 
 case $(dpkg --print-architecture) in
 'i386'|'i586'|'i686') arch=i386; dld=i586;
-  SHA256SUM_TGZ="47154cb3dc19399374ce6b9e86a43c63e2942bc2526bea6ff711f544da50f106" #must be modified for each release
+  SHA256SUM_TGZ="0000000000000000000000000000000000000000000000000000000000000000" #must be modified for each release
   ;; 
 'amd64'  ) arch=amd64; dld=x64;
-  SHA256SUM_TGZ="c2f9513727fa7a06d6cf9a10a4c1712a984baa33a69373c0b909785b1f805108" #must be modified for each release 
+  SHA256SUM_TGZ="b396978a716b7d23ccccabfe5c47c3b75d2434d7f8f7af690bc648172382720d" #must be modified for each release 
   ;; 
 arm*      )
   arch=arm
@@ -28,12 +28,12 @@ arm*      )
 			else
 				# Hardfloat
 				dld='arm32-vfp-hflt'
-				SHA256SUM_TGZ="ba1b8922d1a8d43d1db523b613db672eb66270704aead1476665d63b05016ae6" #must be modified for each release
+				SHA256SUM_TGZ="0000000000000000000000000000000000000000000000000000000000000000" #must be modified for each release
 			fi
 		fi
 	elif [ `uname -m` = "armv8l" ] || [ `uname -m` = "arm64" ] || [ `uname -m` = "aarch64" ]; then
 		dld='arm64-vfp-hflt'
-		SHA256SUM_TGZ="7db2e4893da151cb15787421100d76ffd3e88801166431de80ea02dd84109333" #must be modified for each release
+		SHA256SUM_TGZ="0000000000000000000000000000000000000000000000000000000000000000" #must be modified for each release
 	else
 		echo "Oracle JDK 8 only supports ARM v6/v7/v8 hardfloat."
 		arch=''
@@ -46,15 +46,15 @@ arm*      )
 esac
 
 if [ ! $arch = "arm" ]; then
-	JAVA_VERSION=8u391 #must be modified for each release jdk-8u5-linux-x64.tar.gz
-	J_DIR=jdk1.8.0_391 #must be modified for each release
+	JAVA_VERSION=8u431 #must be modified for each release jdk-8u-linux-x64.tar.gz
+	J_DIR=jdk1.8.0_431 #must be modified for each release
 	FILENAME=jdk-${JAVA_VERSION}-linux-${dld}.tar.gz
 	for JAVA_VERSION_OLD2 in `seq 1 200`; do #must be modified for each release
 	   FILENAMES_OLD2="jdk-8u${JAVA_VERSION_OLD2}-linux-${dld}*.tar.gz $FILENAMES_OLD2"
 	done
 else
-	JAVA_VERSION=8u391 #must be modified for each release jdk-8-linux-arm-vfp-hflt.tar.gz
-	J_DIR=jdk1.8.0_391 #must be modified for each release
+	JAVA_VERSION=8u431 #must be modified for each release jdk-8u-linux-arm-vfp-hflt.tar.gz
+	J_DIR=jdk1.8.0_431 #must be modified for each release
 	FILENAME=jdk-${JAVA_VERSION}-linux-${dld}.tar.gz
 	for JAVA_VERSION_OLD1 in `seq 1 200`; do #must be modified for each release
 		FILENAMES_OLD1="jdk-8u${JAVA_VERSION_OLD1}-linux-${dld}*.tar.gz $FILENAMES_OLD1 jdk-8-*.tar.gz"
@@ -156,8 +156,8 @@ install -m 755 fontconfig.Ubuntu.properties $J_INSTALL_DIR/jre/lib/
 rm -rf java-8-oracle
 
 # To add when an older version exists:
-# safe_move jdk-7u2-linux-x64.tar.gz #must be modified for each release
-# safe_move jdk-7u2-linux-i586.tar.gz #must be modified for each release
+# safe_move jdk-7u-linux-x64.tar.gz #must be modified for each release
+# safe_move jdk-7u-linux-i586.tar.gz #must be modified for each release
 rmdir $OLDDIR 2> /dev/null || true
 #remove previous versions, if they exist
 
