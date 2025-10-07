@@ -56,8 +56,8 @@ To build the packages:
         
         # Install the built packages
         echo "Installing the built packages..."
-        sudo apt-get install ../oracle-java8-installer_8.431.1_amd64.deb \
-                             ../oracle-java8-unlimited-jce-policy_8.431.1_all.deb \
-                             ../oracle-java8-set-default_8.431.1_all.deb
+        sudo apt-get install ../oracle-java8-installer_8.451.1_amd64.deb \
+                             ../oracle-java8-unlimited-jce-policy_8.451.1_all.deb \
+                             ../oracle-java8-set-default_8.451.1_all.deb
         
         echo "Installation complete!"
