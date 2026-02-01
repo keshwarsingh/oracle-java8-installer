@@ -13,7 +13,7 @@ case $(dpkg --print-architecture) in
   SHA256SUM_TGZ="0000000000000000000000000000000000000000000000000000000000000000" #must be modified for each release
   ;; 
 'amd64'  ) arch=amd64; dld=x64;
-  SHA256SUM_TGZ="4b945be38cc9b44ddb1bdd4a7d28fdbee3cabb410575e20cdbe157d2bf5b886d" #must be modified for each release 
+  SHA256SUM_TGZ="ab2220d1e8ce7226ae601aacba4d22c56d9007e843ee470ad84cc98dbcb7cd92" #must be modified for each release 
   ;; 
 arm*      )
   arch=arm
@@ -46,15 +46,15 @@ arm*      )
 esac
 
 if [ ! $arch = "arm" ]; then
-	JAVA_VERSION=8u451 #must be modified for each release jdk-8u-linux-x64.tar.gz
-	J_DIR=jdk1.8.0_451 #must be modified for each release
+	JAVA_VERSION=8u481 #must be modified for each release jdk-8u-linux-x64.tar.gz
+	J_DIR=jdk1.8.0_481 #must be modified for each release
 	FILENAME=jdk-${JAVA_VERSION}-linux-${dld}.tar.gz
 	for JAVA_VERSION_OLD2 in `seq 1 200`; do #must be modified for each release
 	   FILENAMES_OLD2="jdk-8u${JAVA_VERSION_OLD2}-linux-${dld}*.tar.gz $FILENAMES_OLD2"
 	done
 else
-	JAVA_VERSION=8u451 #must be modified for each release jdk-8u-linux-arm-vfp-hflt.tar.gz
-	J_DIR=jdk1.8.0_451 #must be modified for each release
+	JAVA_VERSION=8u481 #must be modified for each release jdk-8u-linux-arm-vfp-hflt.tar.gz
+	J_DIR=jdk1.8.0_481 #must be modified for each release
 	FILENAME=jdk-${JAVA_VERSION}-linux-${dld}.tar.gz
 	for JAVA_VERSION_OLD1 in `seq 1 200`; do #must be modified for each release
 		FILENAMES_OLD1="jdk-8u${JAVA_VERSION_OLD1}-linux-${dld}*.tar.gz $FILENAMES_OLD1 jdk-8-*.tar.gz"
