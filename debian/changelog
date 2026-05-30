@@ -1,5 +1,5 @@
-oracle-java8-installer (8.481.1) bionic; urgency=low
+oracle-java8-installer (8.491.1) bionic; urgency=low
 
-  * For more details, see the [Java SE 8u481 Release Notes](https://www.oracle.com/java/technologies/javase/8u481-relnotes.html).
+  * For more details, see the [Java SE 8u491 Release Notes](https://www.oracle.com/java/technologies/javase/8u491-relnotes.html).
 
- -- Chuckle McJava, Master of Laughs <giggles@xyberdata.com>  Mon, 13 Jan 2023 14:00:00 +0400
+ -- Keshwarsingh Nadan <kn@101.systems>  Sat, 30 May 2026 18:55:00 +0400
